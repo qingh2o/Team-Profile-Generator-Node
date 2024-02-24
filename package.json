@@ -1,0 +1,21 @@
+{
+  "name": "team-profile-generator-node",
+  "version": "1.0.0",
+  "description": "Module 12 Object-Oriented Programming: Team Profile Generator",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Qing",
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "^6.5.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
