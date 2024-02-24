@@ -10,6 +10,81 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./src/page-template.js");
 
+// Array of questions for user input
+const managerQuestions = [
+    {
+        type: 'input',
+        message: 'What is the team manager`s name?',
+        name: 'managerName',
+    },
+    {
+        type: 'input',
+        message: 'What is the team manager`s id?',
+        name: 'managerId',
+    },
+    {
+        type: 'input',
+        message: 'What is the team manager`s email?',
+        name: 'managerEmail',
+    },
+    {
+        type: 'input',
+        message: 'What is the team manager`s office number?',
+        name: 'managerOfficeNo',
+    },
+];
 
-// TODO: Write Code to gather information about the development team members, and render the HTML file.
+const addType = [
+    {
+        type: 'list',
+        message: 'Which type of team member would you like to add?',
+        name: 'type',
+        choices: ['Engineer', 'Intern', 'None'],
+    },
+];
 
+const engineerQuestions = [
+    {
+        type: 'input',
+        message: 'What is your engineer`s name?',
+        name: 'engineerName',
+    },
+    {
+        type: 'input',
+        message: 'What is your engineer`s id?',
+        name: 'engineerId',
+    },
+    {
+        type: 'input',
+        message: 'What is your engineer`s email?',
+        name: 'engineerEmail',
+    },
+    {
+        type: 'input',
+        message: 'What is your engineer`s GitHub username?',
+        name: 'engineerGitHub',
+    },
+];
+
+const internQuestions = [
+    {
+        type: 'input',
+        message: 'What is your intern`s name?',
+        name: 'internName',
+    },
+    {
+        type: 'input',
+        message: 'What is your intern`s id?',
+        name: 'internId',
+    },
+    {
+        type: 'input',
+        message: 'What is your intern`s email?',
+        name: 'internEmail',
+    },
+    {
+        type: 'input',
+        message: 'What is your intern`s school?',
+        name: 'internSchool',
+    },
+];
