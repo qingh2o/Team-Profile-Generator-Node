@@ -9,6 +9,7 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./src/page-template.js");
+const { log } = require("console");
 
 // Array of questions for user input
 const managerQuestions = [
@@ -88,3 +89,16 @@ const internQuestions = [
         name: 'internSchool',
     },
 ];
+
+// function to initialize program
+function init() {
+    console.log("Let's start building your team!");
+    inquirer
+        .prompt(internQuestions)
+        .then((data) => {
+            console.log(data)
+        });
+}
+
+// function call to initialize program
+init();
