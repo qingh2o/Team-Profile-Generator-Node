@@ -11,6 +11,8 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 const render = require("./src/page-template.js");
 const { log } = require("console");
 
+const team = [];
+
 // Array of questions for user input
 const managerQuestions = [
     {
@@ -35,7 +37,7 @@ const managerQuestions = [
     },
 ];
 
-const addType = [
+const typeQuestion = [
     {
         type: 'list',
         message: 'Which type of team member would you like to add?',
@@ -89,16 +91,55 @@ const internQuestions = [
         name: 'internSchool',
     },
 ];
+// function to initialize choose type program
+function initType() {
+    inquirer
+        .prompt(typeQuestion)
+        .then((answerType) => {     
+            const type = answerType.type
+            if (type === 'Engineer') {
+                initEngineer();
+            };
+            if (type === 'Intern') {
+                initIntern();
+            }; 
+            if (type === 'None') {
+                console.log(`You stop adding more employees!`);
+                return;
+            };
+        });    
+}
+
+function initEngineer() {
+    inquirer
+    .prompt(engineerQuestions)
+    .then((answer) => {     
+        const engineer = new Engineer(answer.engineerName, answer.engineerId, answer.engineerEmail, answer.engineerGitHub);    
+            team.push(engineer);
+    }); 
+}
+
+function initIntern() {
+    inquirer
+    .prompt(internQuestions)
+    .then((answer) => {     
+        const intern = new Intern(answer.internName, answer.internId, answer.internEmail, answer.internSchool);    
+            team.push(intern);
+    }); 
+}
 
 // function to initialize program
-function init() {
+function initApp() {
     console.log("Let's start building your team!");
     inquirer
-        .prompt(internQuestions)
-        .then((data) => {
-            console.log(data)
+        .prompt(managerQuestions)
+        .then((answer) => {  
+            const manager = new Manager(answer.managerName, answer.managerId, answer.managerEmail, answer.managerOfficeNo);    
+            team.push(manager);
+            initType(); 
         });
+     
 }
 
 // function call to initialize program
-init();
+initApp();
