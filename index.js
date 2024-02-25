@@ -12,27 +12,40 @@ const render = require("./src/page-template.js");
 
 const team = [];
 
+// Validate empty input
+const validateEmptyInput = (input) => {
+    if (input.trim() !== "") {
+        return true;
+    } else {
+        return 'Input field cannot be empty.';
+    }
+};
+
 // Array of questions for user input
 const managerQuestions = [
     {
         type: 'input',
         message: 'What is the team manager`s name?',
         name: 'managerName',
+        validate: validateEmptyInput,
     },
     {
         type: 'input',
         message: 'What is the team manager`s id?',
         name: 'managerId',
+        validate: validateEmptyInput,
     },
     {
         type: 'input',
         message: 'What is the team manager`s email?',
         name: 'managerEmail',
+        validate: validateEmptyInput,
     },
     {
         type: 'input',
         message: 'What is the team manager`s office number?',
         name: 'managerOfficeNo',
+        validate: validateEmptyInput,
     },
 ];
 
@@ -50,21 +63,25 @@ const engineerQuestions = [
         type: 'input',
         message: 'What is your engineer`s name?',
         name: 'engineerName',
+        validate: validateEmptyInput,
     },
     {
         type: 'input',
         message: 'What is your engineer`s id?',
         name: 'engineerId',
+        validate: validateEmptyInput,
     },
     {
         type: 'input',
         message: 'What is your engineer`s email?',
         name: 'engineerEmail',
+        validate: validateEmptyInput,
     },
     {
         type: 'input',
         message: 'What is your engineer`s GitHub username?',
         name: 'engineerGitHub',
+        validate: validateEmptyInput,
     },
 ];
 
@@ -73,21 +90,25 @@ const internQuestions = [
         type: 'input',
         message: 'What is your intern`s name?',
         name: 'internName',
+        validate: validateEmptyInput,
     },
     {
         type: 'input',
         message: 'What is your intern`s id?',
         name: 'internId',
+        validate: validateEmptyInput,
     },
     {
         type: 'input',
         message: 'What is your intern`s email?',
         name: 'internEmail',
+        validate: validateEmptyInput,
     },
     {
         type: 'input',
         message: 'What is your intern`s school?',
         name: 'internSchool',
+        validate: validateEmptyInput,
     },
 ];
 
