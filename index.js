@@ -99,13 +99,13 @@ function initType() {
             const type = answerType.type
             if (type === 'Engineer') {
                 initEngineer();               
-            };
-            if (type === 'Intern') {
+            }else if (type === 'Intern') {
                 initIntern();
-            }; 
-            if (type === 'None') {
+            } else {
                 console.log(`You've stopped adding more employees!`);
-                return;
+                fs.writeFile(outputPath, render(team), (err) => {
+                    err ? console.error(err) : console.log('Creating an HTML page for your team...');
+                });
             };
         });    
 };
@@ -116,7 +116,7 @@ function initEngineer() {
     .then((answer) => {     
         const engineer = new Engineer(answer.engineerName, answer.engineerId, answer.engineerEmail, answer.engineerGitHub);    
         team.push(engineer);
-        initType();
+       
     }); 
 }
 // Initialize Intern
@@ -126,15 +126,8 @@ function initIntern() {
     .then((answer) => {     
         const intern = new Intern(answer.internName, answer.internId, answer.internEmail, answer.internSchool);    
         team.push(intern);
-        initType();
+       
     }); 
-}
-
-// function to write README file
-function writeToFile(fileName, data) {
-    fs.writeFile(fileName, render(data), (err) => {
-        err ? console.error(err) : console.log('Creating an HTML page for your team...');
-    });
 }
 
 
