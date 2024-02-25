@@ -98,24 +98,25 @@ function initType() {
         .then((answerType) => {     
             const type = answerType.type
             if (type === 'Engineer') {
-                initEngineer();
+                initEngineer();               
             };
             if (type === 'Intern') {
                 initIntern();
             }; 
             if (type === 'None') {
-                console.log(`You stop adding more employees!`);
+                console.log(`You've stopped adding more employees!`);
                 return;
             };
         });    
-}
+};
 
 function initEngineer() {
     inquirer
     .prompt(engineerQuestions)
     .then((answer) => {     
         const engineer = new Engineer(answer.engineerName, answer.engineerId, answer.engineerEmail, answer.engineerGitHub);    
-            team.push(engineer);
+        team.push(engineer);
+        initType();
     }); 
 }
 
@@ -124,7 +125,8 @@ function initIntern() {
     .prompt(internQuestions)
     .then((answer) => {     
         const intern = new Intern(answer.internName, answer.internId, answer.internEmail, answer.internSchool);    
-            team.push(intern);
+        team.push(intern);
+        initType();
     }); 
 }
 
