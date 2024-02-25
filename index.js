@@ -109,7 +109,7 @@ function initType() {
             };
         });    
 };
-
+// Initialize Engineer
 function initEngineer() {
     inquirer
     .prompt(engineerQuestions)
@@ -119,7 +119,7 @@ function initEngineer() {
         initType();
     }); 
 }
-
+// Initialize Intern
 function initIntern() {
     inquirer
     .prompt(internQuestions)
@@ -130,6 +130,14 @@ function initIntern() {
     }); 
 }
 
+// function to write README file
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, render(data), (err) => {
+        err ? console.error(err) : console.log('Creating an HTML page for your team...');
+    });
+}
+
+
 // function to initialize program
 function initApp() {
     console.log("Let's start building your team!");
@@ -139,8 +147,8 @@ function initApp() {
             const manager = new Manager(answer.managerName, answer.managerId, answer.managerEmail, answer.managerOfficeNo);    
             team.push(manager);
             initType(); 
-        });
-     
+            writeToFile(outputPath, team);
+        });    
 }
 
 // function call to initialize program
