@@ -18,7 +18,7 @@ const validateEmptyInput = (input) => {
         return true;
     } else {
         return 'Input field cannot be empty.';
-    }
+    };
 };
 
 // Array of questions for user input
@@ -112,8 +112,8 @@ const internQuestions = [
     },
 ];
 
-// Initialize Manager
-function initManager() {
+// Function to start Initialize Manager 
+function initManagerRunApp() {
     console.log("Let's start building your team!");
     inquirer
         .prompt(managerQuestions)
@@ -122,9 +122,9 @@ function initManager() {
             team.push(manager);
             initType(); 
         });    
-}
+};
 
-// function to initialize choose type program
+// Function to initialize choose type 
 function initType() {
     inquirer
         .prompt(typeQuestion)
@@ -136,7 +136,7 @@ function initType() {
             } else {
                 console.log(`You've stopped adding more employees!`);
                 fs.writeFile(outputPath, render(team), (err) => {
-                    err ? console.error(err) : console.log('Your HTML page is ready, please check out team.html');
+                    err ? console.error(err) : console.log("Your HTML page is ready, please check the 'team.html' file in the output folder!");
                 });
             };
         });    
@@ -151,7 +151,8 @@ function initEngineer() {
         team.push(engineer);
         initType();
     }); 
-}
+};
+
 // Initialize Intern
 function initIntern() {
     inquirer
@@ -161,7 +162,7 @@ function initIntern() {
         team.push(intern);
         initType();
     }); 
-}
+};
 
-// function call to initialize program
-initManager(); 
+// Function call to start the app with initManagerRunApp
+initManagerRunApp(); 
