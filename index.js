@@ -9,7 +9,6 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./src/page-template.js");
-const { log } = require("console");
 
 const team = [];
 
@@ -91,24 +90,37 @@ const internQuestions = [
         name: 'internSchool',
     },
 ];
+
+// Initialize Manager
+function initManager() {
+    console.log("Let's start building your team!");
+    inquirer
+        .prompt(managerQuestions)
+        .then((answer) => {  
+            const manager = new Manager(answer.managerName, answer.managerId, answer.managerEmail, answer.managerOfficeNo);    
+            team.push(manager);
+            initType(); 
+        });    
+}
+
 // function to initialize choose type program
 function initType() {
     inquirer
         .prompt(typeQuestion)
-        .then((answerType) => {     
-            const type = answerType.type
-            if (type === 'Engineer') {
+        .then((answer) => {     
+            if (answer.type === 'Engineer') {
                 initEngineer();               
-            }else if (type === 'Intern') {
+            }else if (answer.type === 'Intern') {
                 initIntern();
             } else {
                 console.log(`You've stopped adding more employees!`);
                 fs.writeFile(outputPath, render(team), (err) => {
-                    err ? console.error(err) : console.log('Creating an HTML page for your team...');
+                    err ? console.error(err) : console.log('Your HTML page is ready, please check out team.html');
                 });
             };
         });    
 };
+
 // Initialize Engineer
 function initEngineer() {
     inquirer
@@ -116,7 +128,7 @@ function initEngineer() {
     .then((answer) => {     
         const engineer = new Engineer(answer.engineerName, answer.engineerId, answer.engineerEmail, answer.engineerGitHub);    
         team.push(engineer);
-       
+        initType();
     }); 
 }
 // Initialize Intern
@@ -126,23 +138,9 @@ function initIntern() {
     .then((answer) => {     
         const intern = new Intern(answer.internName, answer.internId, answer.internEmail, answer.internSchool);    
         team.push(intern);
-       
+        initType();
     }); 
 }
 
-
-// function to initialize program
-function initApp() {
-    console.log("Let's start building your team!");
-    inquirer
-        .prompt(managerQuestions)
-        .then((answer) => {  
-            const manager = new Manager(answer.managerName, answer.managerId, answer.managerEmail, answer.managerOfficeNo);    
-            team.push(manager);
-            initType(); 
-            writeToFile(outputPath, team);
-        });    
-}
-
 // function call to initialize program
-initApp();
+initManager(); 
