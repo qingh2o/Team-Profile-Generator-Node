@@ -20,7 +20,7 @@ The team profile generator application must meet the following critical requirem
 * Write code in `index.js` that uses inquirer to gather information about the development team members and creates objects for each team member using the correct classes as blueprints.
   * When a user starts the application then they are prompted to enter the **Manager**’s: Name, Employee ID, Email address, Office number
 
-  * When a user enters those requirements then the user is presented with a menu with the option to: Engineer, Intern, None
+  * When a user enters those requirements then the user is presented with a menu with the option to: **Engineer**, **Intern**, **None**
 
   * When a user selects the **Engineer** option then a user is prompted to enter the following and then the user is taken back to the menu: Engineer's Name, ID, Email, GitHub username
 
@@ -47,8 +47,35 @@ The team profile generator application must meet the following critical requirem
 
 ## Installation
 
-  To install Inquirer package, run the following command:
+To install Inquirer package, run the following command:
 
+```
+npm i
+```
+
+## Usage
+
+
+
+## License
+
+This project is licensed under the MIT license.
+
+## Tests
+
+* To test this application whether pass the [Jest](https://www.npmjs.com/package/jest) unit tests, use the following command:
+
+  ```bash
+  npm run test
   ```
-  npm i
-  ```
+
+* To test whether the [Inquirer](https://www.npmjs.com/package/inquirer) collects user input, and generates the correct html file.
+  * First, run the application using the following command:
+
+    ```bash
+    node index.js
+    ```
+
+  * Then, use the command line to answer questions about your team members.
+
+  * The application will generate a `team.html` in the `output` folder. 
