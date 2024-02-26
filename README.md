@@ -17,20 +17,38 @@ The team profile generator application must meet the following critical requirem
 
      * `Intern` class extend from `Employee` include: `school`, `getSchool()`, `getRole()`&mdash;overridden to return `'Intern'`
 
-  * Write code in `index.js` that uses inquirer to gather information about the development team members and creates objects for each team member using the correct classes as blueprints.
-     *When a user starts the application then they are prompted to enter the **Manager**’s: Name, Employee ID, Email address, Office number
+* Write code in `index.js` that uses inquirer to gather information about the development team members and creates objects for each team member using the correct classes as blueprints.
+  * When a user starts the application then they are prompted to enter the **Manager**’s: Name, Employee ID, Email address, Office number
 
-     * When a user enters those requirements then the user is presented with a menu with the option to: Engineer, Intern, None
+  * When a user enters those requirements then the user is presented with a menu with the option to: Engineer, Intern, None
 
-     * When a user selects the **Engineer** option then a user is prompted to enter the following and then the user is taken back to the menu: Engineer's Name, ID, Email, GitHub username
+  * When a user selects the **Engineer** option then a user is prompted to enter the following and then the user is taken back to the menu: Engineer's Name, ID, Email, GitHub username
 
-     * When a user selects the **Intern** option then a user is prompted to enter the following and then the user is taken back to the menu: Intern’s name, ID, Email, School
+  * When a user selects the **Intern** option then a user is prompted to enter the following and then the user is taken back to the menu: Intern’s name, ID, Email, School
      
-     * When a user selects the **None** option then they exit the application, and the HTML is generated.
+  * When a user selects the **None** option then they exit the application, and the HTML is generated.
 
-  * Call the `render` function (provided for you) and pass in an array containing all employee objects; 
-     * The `render` function will generate and return a block of HTML including templated divs for each employee!
+* Call the `render` function (provided for you) and pass in an array containing all employee objects; 
+  * The `render` function will generate and return a block of HTML including templated divs for each employee!
 
-  * Create an HTML file using the HTML returned from the `render` function. 
-     * Write it to a file named `team.html` in the `output` folder. 
-     * Use the provided variable `outputPath` to target this location.
+* Create an HTML file using the HTML returned from the `render` function. 
+  * Write it to a file named `team.html` in the `output` folder. 
+  * Use the provided variable `outputPath` to target this location.
+
+## Table Of Contents
+
+  * [Installation](#installation)
+
+  * [Usage](#usage)
+
+  * [License](#license)
+
+  * [Tests](#tests)
+
+## Installation
+
+  To install Inquirer package, run the following command:
+
+  ```
+  npm i
+  ```
