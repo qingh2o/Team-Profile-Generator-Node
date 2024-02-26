@@ -61,7 +61,7 @@ To check whether the application meets critical requirements, open [team.html](h
 
 The "team.html" page should look similar to the screenshot below.
 
-![Page With Chrome DevTools Screenshot](./output/sample_html.png)
+![Page With Team Profile Screenshot](./output/sample_html.png)
 
 
 To view walkthrough Demo, watch the video below:
