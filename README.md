@@ -57,7 +57,13 @@ npm i
 
 To use the Team-Profile-Generator-Node, you can download or clone this repository.
 
-To check whether the application meets critical requirements, open  [team.html](https://github.com/qingh2o/Team-Profile-Generator-Node/blob/main/output/team.html) file.
+To check whether the application meets critical requirements, open [team.html](https://github.com/qingh2o/Team-Profile-Generator-Node/blob/main/output/team.html) file.
+
+To view walkthrough Demo, watch the video below:
+
+**Jest Test Video**
+
+**App Video**
 
 ## License
 
