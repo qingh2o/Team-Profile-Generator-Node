@@ -28,7 +28,7 @@ The team profile generator application must meet the following critical requirem
      
   * When a user selects the **None** option then they exit the application, and the HTML is generated.
 
-* Call the `render` function (provided for you) and pass in an array containing all employee objects; 
+* Call the `render` function and pass in an array containing all employee objects; 
   * The `render` function will generate and return a block of HTML including templated divs for each employee!
 
 * Create an HTML file using the HTML returned from the `render` function. 
@@ -55,7 +55,9 @@ npm i
 
 ## Usage
 
+To use the Team-Profile-Generator-Node, you can download or clone this repository.
 
+To check whether the application meets critical requirements, open  [team.html](https://github.com/qingh2o/Team-Profile-Generator-Node/blob/main/output/team.html) file.
 
 ## License
 
@@ -72,9 +74,9 @@ This project is licensed under the MIT license.
 * To test whether the [Inquirer](https://www.npmjs.com/package/inquirer) collects user input, and generates the correct html file.
   * First, run the application using the following command:
 
-    ```bash
-    node index.js
-    ```
+  ```bash
+  node index.js
+  ```
 
   * Then, use the command line to answer questions about your team members.
 
