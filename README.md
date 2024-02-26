@@ -59,6 +59,11 @@ To use the Team-Profile-Generator-Node, you can download or clone this repositor
 
 To check whether the application meets critical requirements, open [team.html](https://github.com/qingh2o/Team-Profile-Generator-Node/blob/main/output/team.html) file.
 
+The "team.html" page should look similar to the screenshot below.
+
+![Page With Chrome DevTools Screenshot](./output/sample_html.png)
+
+
 To view walkthrough Demo, watch the video below:
 
 **Jest Test Video**
