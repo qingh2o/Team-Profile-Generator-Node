@@ -68,7 +68,17 @@ To view walkthrough Demo, watch the video below:
 
 **Jest Test Video**
 
+
+https://github.com/qingh2o/Team-Profile-Generator-Node/assets/144452799/373453ff-6006-4eda-ab78-20088466d15d
+
+
 **App Video**
+
+
+
+https://github.com/qingh2o/Team-Profile-Generator-Node/assets/144452799/de6c06ea-cf68-4115-ab6d-bc65e1fed32c
+
+
 
 ## License
 
